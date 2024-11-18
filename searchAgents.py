@@ -297,6 +297,7 @@ class CornersProblem(search.SearchProblem):
         space)
         """
         "*** YOUR CODE HERE ***"
+        # @Author: Iulia Anca
         return (self.startingPosition, ())
         # util.raiseNotDefined()
 
@@ -305,6 +306,7 @@ class CornersProblem(search.SearchProblem):
         Returns whether this search state is a goal state of the problem.
         """
         "*** YOUR CODE HERE ***"
+        # @Author: Iulia Anca
         visitedCorners = state[1]
         allCorners = self.corners
 
@@ -337,6 +339,7 @@ class CornersProblem(search.SearchProblem):
             #   hitsWall = self.walls[nextx][nexty]
 
             "*** YOUR CODE HERE ***"
+            # @Author: Iulia Anca
             x,y = state[0]
             dx, dy = Actions.directionToVector(action)
             nextx, nexty = int(x + dx), int(y + dy)
@@ -392,6 +395,7 @@ def cornersHeuristic(state: Any, problem: CornersProblem):
 
     "*** YOUR CODE HERE ***"
 
+    # @Author: Iulia Anca
     currentPosition = state[0]
 
     visitedCorners = list(state[1])
@@ -544,6 +548,7 @@ class ClosestDotSearchAgent(SearchAgent):
         problem = AnyFoodSearchProblem(gameState)
 
         "*** YOUR CODE HERE ***"
+        # @Author: Iulia Anca
         return breadthFirstSearch(problem)
         # util.raiseNotDefined()
 
@@ -581,6 +586,7 @@ class AnyFoodSearchProblem(PositionSearchProblem):
         x,y = state
 
         "*** YOUR CODE HERE ***"
+        # @Author: Iulia Anca
         return self.food[x][y]
         # util.raiseNotDefined()
 
