@@ -271,6 +271,7 @@ def euclideanHeuristic(position, problem, info={}):
 # This portion is incomplete.  Time to write code!  #
 #####################################################
 
+
 class CornersProblem(search.SearchProblem):
     """
     This search problem finds paths through all four corners of a layout.
@@ -296,9 +297,8 @@ class CornersProblem(search.SearchProblem):
         Returns the start state (in your state space, not the full Pacman state
         space)
         """
-        "*** YOUR CODE HERE ***"
         # @Author: Iulia Anca
-        return (self.startingPosition, ())
+        return (self.startingPosition, [])
         # util.raiseNotDefined()
 
     def isGoalState(self, state: Any):
@@ -517,7 +517,27 @@ def foodHeuristic(state: Tuple[Tuple, List[List]], problem: FoodSearchProblem):
     """
     position, foodGrid = state
     "*** YOUR CODE HERE ***"
-    return 0
+    # @Author: Melisa Marian
+
+    food_on_the_map = foodGrid.asList() #put the food on the map in a list
+    if not food_on_the_map: #if the list is empty, we collected all food
+        return 0
+
+    cost_to_food = [] #store the cost to reach food in an array
+    for food in food_on_the_map:
+        cost = util.manhattanDistance(position, food) #manhattan distance to each food
+        cost_to_food.append(cost)
+
+    minimum_cost = min(cost_to_food) #get the closest food
+    maximum_cost = 0 #initialize maximum cost to 0
+
+    for food_a in range (len(food_on_the_map)):
+        for food_b in range (food_a + 1, len(food_on_the_map)):
+            cost_to_get_there = util.manhattanDistance(food_on_the_map[food_a], food_on_the_map[food_b])
+            maximum_cost = max(maximum_cost, cost_to_get_there)
+    cost_to_return = minimum_cost + maximum_cost
+    return cost_to_return
+
 
 class ClosestDotSearchAgent(SearchAgent):
     "Search for all food using a sequence of searches"
@@ -586,6 +606,8 @@ class AnyFoodSearchProblem(PositionSearchProblem):
         x,y = state
 
         "*** YOUR CODE HERE ***"
+
+
         # @Author: Iulia Anca
         return self.food[x][y]
         # util.raiseNotDefined()
