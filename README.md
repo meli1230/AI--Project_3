@@ -9,10 +9,10 @@ Please note that the project has been solved in teams of 2. My work is marked un
 This project builds on basic search techniques, introducing **multi-goal search problems** and **heuristic optimizations** to enhance efficiency. Pacman must now navigate mazes while solving more complex constraints.
 
 ### **Implemented Algorithms**
-- **Corners Problem Search:** Finds the shortest path through all four maze corners.
-- **A* with Heuristics:** Implements heuristics for optimal multi-goal pathfinding.
-- **Food Search Problem:** Optimizes food collection using search strategies.
-- **Greedy Search for Food:** Implements a suboptimal agent that eats the closest food first.
+- **Corners Problem Search:** Finds the shortest path through all four maze corners
+- **A* with Heuristics:** Implements heuristics for optimal multi-goal pathfinding
+- **Food Search Problem:** Optimizes food collection using search strategies
+- **Greedy Search for Food:** Implements a suboptimal agent that eats the closest food first
 
 ## **How to Run the Search Agents**
 Test different search strategies by running:
