@@ -3,7 +3,9 @@ This project extends **search algorithms** to solve more complex multi-goal sear
 
 ## **License**
 This project is for educational purposes and follows the **Berkeley AI Pacman Project** framework. <br/>
-Please note that the project has been solved in teams of 2. My work is marked under `@Author: Melisa Marian`.
+Please note that the project has been solved in teams of 2:
+- Melisa Marian's work is marked under `@Author: Melisa Marian`
+- Iulia Ana Anca's work is marked under `#Iulia Anca`
 
 ## **Overview**
 This project builds on basic search techniques, introducing **multi-goal search problems** and **heuristic optimizations** to enhance efficiency. Pacman must now navigate mazes while solving more complex constraints.
